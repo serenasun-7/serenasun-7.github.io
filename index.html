@@ -136,16 +136,6 @@
     .role { font-size: 15px; line-height: 1.7; color: var(--muted); }
     .role strong { color: var(--ink); font-weight: 600; }
     .links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 4px; }
-    .map-embed { margin-top: 8px; scroll-margin-top: var(--nav-h); }
-    .map-embed .featured-text { margin-bottom: 20px; max-width: 720px; }
-    .map-embed .section-head { margin-bottom: 16px; }
-    .map-embed h3 { font-size: 20px; font-weight: 700; }
-    .map-embed iframe {
-      display: block; width: 100%; height: 620px; border: 1px solid var(--line);
-      border-radius: 8px; background: var(--placeholder);
-    }
-    .map-caption { font-size: 14px; color: var(--subtle); margin-top: 10px; }
-    @media (max-width: 640px) { .map-embed iframe { height: 460px; } }
     .more { font-weight: 600; font-size: 15px; text-decoration: none; }
     .more:hover { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -290,18 +280,15 @@
           </div>
         </article>
 
-        <div id="sea-level-map" class="map-embed">
+        <article class="featured">
+          <img class="media" src="assets/reclamation-intensity.jpg" alt="Satellite image of the Pearl River Estuary with reclaimed land shaded by reclamation intensity" loading="lazy">
           <div class="featured-text">
-            <span class="eyebrow">Interactive web map · GEOG7302</span>
-            <h3>Sea Level Rise Simulation: Impacts on East Asia</h3>
-            <p>A web map built with the ArcGIS Maps SDK for JavaScript, showing the land and major cities flooded under four scenarios from today's sea level to +75 m, derived from GTOPO30 elevation data.</p>
-            <div class="links">
-              <a class="more" href="https://serenasun-7.github.io/sea-level-rise-map/" target="_blank" rel="noopener">Open full screen →</a>
-            </div>
+            <span class="eyebrow">Big data analytics · GEOG7307 group project</span>
+            <h3>Land Reclamation in the Pearl River Estuary and China's 2018 Reclamation Ban</h3>
+            <p>Detected about 72 km² of land reclaimed from the sea between 2014 and 2021 by comparing JRC surface water with Sentinel-2, then classified its use with a Random Forest on fused Sentinel-1 and Sentinel-2 features. Treating the 2018 reclamation moratorium as a natural experiment, interrupted time-series analysis found no significant drop in reclaimed area, but a shift in use from infrastructure (33% → 21%) toward ecological land (36% → 42%). Classification accuracy was modest: 63%, or 80% after merging similar classes.</p>
+            <p class="role"><strong>My role:</strong> aggregated the results to a 100 m grid, calculated reclamation intensity, and remapped land use for the intensity analysis.</p>
           </div>
-          <iframe src="https://serenasun-7.github.io/sea-level-rise-map/" title="Interactive sea level rise simulation map of East Asia" loading="lazy" allowfullscreen></iframe>
-          <p class="map-caption">Select a scenario (0 m, +5 m, +50 m or +75 m) to see which areas would be flooded.</p>
-        </div>
+        </article>
       </div>
     </section>
 
