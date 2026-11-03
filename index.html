@@ -130,7 +130,14 @@
     .card .media { height: 190px; width: 100%; object-fit: cover; margin-bottom: 6px; }
     .card h3 { font-size: 17px; font-weight: 600; line-height: 1.4; }
     .card p { font-size: 15px; line-height: 1.6; color: var(--muted); }
-    .map-embed { margin-top: 56px; scroll-margin-top: var(--nav-h); }
+    .featured.reverse .media { order: 2; }
+    .featured img.media { border-radius: 8px; border: 1px solid var(--line); background: #FFFFFF; }
+    .featured.contain img.media { object-fit: contain; }
+    .role { font-size: 15px; line-height: 1.7; color: var(--muted); }
+    .role strong { color: var(--ink); font-weight: 600; }
+    .links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 4px; }
+    .map-embed { margin-top: 8px; scroll-margin-top: var(--nav-h); }
+    .map-embed .featured-text { margin-bottom: 20px; max-width: 720px; }
     .map-embed .section-head { margin-bottom: 16px; }
     .map-embed h3 { font-size: 20px; font-weight: 700; }
     .map-embed iframe {
@@ -238,7 +245,7 @@
         <div class="pubs">
           <div>
             <p class="pub-title">Normalized dynamic fluorescence height: An alternative algorithm for chlorophyll a estimation in algae-dominated waters using hyperspectral remote sensing reflectance from in situ and spaceborne imagers.</p>
-            <p class="pub-meta">Zhao, D., Luo, Q., Lai, X., <strong>Sun, H.</strong>, Qiu, Z., Zhang, H., & Sun, Z. <em>Remote Sensing</em>, 2026. <a href="#">DOI</a> · <a href="#">PDF</a></p>
+            <p class="pub-meta">Zhao, D., Luo, Q., Lai, X., <strong>Sun, H.</strong>, Qiu, Z., Zhang, H., &amp; Sun, Z. (2026). <em>Remote Sensing</em>, 18(14), 2332. <a href="https://doi.org/10.3390/rs18142332" target="_blank" rel="noopener">doi:10.3390/rs18142332</a></p>
           </div>
 
           <h3 class="pub-group">In preparation</h3>
@@ -258,51 +265,39 @@
     <section id="projects" class="band">
       <div class="container">
         <h2>Projects</h2>
-        <p class="section-note">Selected work from my MSc at [University].</p>
+        <p class="section-note">Selected work from my MSc at The University of Hong Kong.</p>
 
         <article class="featured">
-          <!-- Replace with: <img class="media" src="assets/capstone.jpg" alt="[Describe the map/figure]" style="border-radius:8px"> -->
-          <div class="media ph" role="img" aria-label="Placeholder for capstone figure">[Key map or figure from capstone]</div>
+          <img class="media" src="assets/flood-gee-app.jpg" alt="Google Earth Engine app showing flooded areas around Foshan with a population exposure chart" loading="lazy">
           <div class="featured-text">
-            <span class="eyebrow">Capstone project · Distinction</span>
-            <h3>[Capstone title]</h3>
-            <p>[Two or three sentences: the question, the data and methods, and the main finding.]</p>
-            <a class="more" href="assets/capstone-report.pdf" target="_blank" rel="noopener">Read the report →</a>
+            <span class="eyebrow">Google Earth Engine app · GEOG7310 group project</span>
+            <h3>Flood Exposure in the Pearl River Delta During the June 2022 Extreme Rainfall</h3>
+            <p>Optical imagery was fully clouded at the flood peak, so we mapped inundation across the Greater Bay Area from 10 m Sentinel-1 radar over seven phases of the "Dragon Boat Water" event, then overlaid WorldPop data to estimate who was exposed. Exposure peaked at about 23,800 people during the receding phase rather than at peak water, showing that human impact lags behind the flood itself.</p>
+            <p class="role"><strong>My role:</strong> designed the methodology: SAR preprocessing, Otsu-threshold flood extraction, and refinement of the flood masks using JRC surface water and SRTM terrain.</p>
+            <div class="links">
+              <a class="more" href="https://wanglu-488211.projects.earthengine.app/view/g17-gee" target="_blank" rel="noopener">Open the app →</a>
+            </div>
           </div>
         </article>
 
-        <div class="cards">
-          <article class="card">
-            <!-- Replace with: <img class="media" src="assets/map.jpg" alt="..." style="border-radius:8px"> -->
-            <div class="media ph" role="img" aria-label="Placeholder for map image">[Map]</div>
-            <h3>[Map project title]</h3>
-            <p>[One or two lines on what the map shows.]</p>
-            <a class="more" href="#">View map →</a>
-          </article>
-
-          <article class="card">
-            <!-- Optional: replace with <img class="media" src="assets/sea-level.jpg" alt="Flooded areas of East Asia under a sea level rise scenario" style="border-radius:8px"> -->
-            <div class="media ph" role="img" aria-label="Placeholder for sea level rise map screenshot">[Sea level rise map screenshot]</div>
-            <span class="eyebrow">Interactive web map</span>
-            <h3>Sea Level Rise Simulation: Impacts on East Asia</h3>
-            <p>Shows the land and major cities flooded under four scenarios, from today's sea level to +75 m, using GTOPO30 elevation data.</p>
-            <a class="more" href="#sea-level-map">Try it below ↓</a>
-          </article>
-
-          <article class="card">
-            <!-- Replace with: <img class="media" src="assets/storymap.jpg" alt="Hotspot map of stray animal deaths in [study area]" style="border-radius:8px"> -->
-            <div class="media ph" role="img" aria-label="Placeholder for a hotspot map from the StoryMap">[Hotspot map from the StoryMap]</div>
-            <span class="eyebrow">ArcGIS StoryMap · Group project, 2025</span>
-            <h3>Where Life Ends in Silence: Spatial Analysis of Stray Animal Deaths</h3>
-            <p>Identified high-incidence blackspots and the environmental factors driving them in [study area]. My role: [e.g. hotspot analysis and cartography].</p>
-            <a class="more" href="https://storymaps.arcgis.com/stories/4c71a0f011514bc39069cf7708ad2a1c" target="_blank" rel="noopener">View the StoryMap →</a>
-          </article>
-        </div>
+        <article class="featured reverse contain">
+          <img class="media" src="assets/water-colour-hue.jpg" alt="Scatter plot of water hue angle against apparent visible wavelength, coloured from turbid red to clear blue" loading="lazy">
+          <div class="featured-text">
+            <span class="eyebrow">Machine learning · GEOG7308 group project</span>
+            <h3>Chromaticity-Based Water Quality Assessment Using Machine Learning</h3>
+            <p>Combined hyperspectral reflectance with CIE 1931 colour features (how the water looks to the human eye) across 1,493 samples from the global GLORIA and HYPERMAQ datasets. Gradient boosting classified water types with 84.6% accuracy, and XGBoost estimated chlorophyll-a with R² = 0.856; SHAP analysis showed colour features add information that spectral indices alone miss.</p>
+            <p class="role"><strong>My role:</strong> conceptualization and lead on the machine learning: built and tuned the classification and regression models (scikit-learn, XGBoost, TensorFlow), ran the SHAP interpretation, and validated externally on Belgian water data.</p>
+          </div>
+        </article>
 
         <div id="sea-level-map" class="map-embed">
-          <div class="section-head">
-            <h3>Explore: Sea Level Rise Simulation</h3>
-            <a class="more" href="https://serenasun-7.github.io/sea-level-rise-map/" target="_blank" rel="noopener">Open full screen →</a>
+          <div class="featured-text">
+            <span class="eyebrow">Interactive web map · GEOG7302</span>
+            <h3>Sea Level Rise Simulation: Impacts on East Asia</h3>
+            <p>A web map built with the ArcGIS Maps SDK for JavaScript, showing the land and major cities flooded under four scenarios from today's sea level to +75 m, derived from GTOPO30 elevation data.</p>
+            <div class="links">
+              <a class="more" href="https://serenasun-7.github.io/sea-level-rise-map/" target="_blank" rel="noopener">Open full screen →</a>
+            </div>
           </div>
           <iframe src="https://serenasun-7.github.io/sea-level-rise-map/" title="Interactive sea level rise simulation map of East Asia" loading="lazy" allowfullscreen></iframe>
           <p class="map-caption">Select a scenario (0 m, +5 m, +50 m or +75 m) to see which areas would be flooded.</p>
@@ -345,7 +340,7 @@
         <a href="mailto:jnsun030@gmail.com">jnsun030@gmail.com</a>
       </div>
       <div class="social">
-        <a href="#" target="_blank" rel="noopener">ORCID: 0009-0005-9936-5863</a>
+        <a href="https://orcid.org/0009-0005-9936-5863" target="_blank" rel="noopener">ORCID: 0009-0005-9936-5863</a>
       </div>
     </div>
     <p class="container copyright">© <span id="year">2026</span> Serena</p>
