@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Your Name] | Remote Sensing &amp; GIScience</title>
+  <meta name="description" content="[Your Name]: MSc (Distinction), remote sensing and spatial data science. Applying to PhD programs for Fall 2027.">
+  <!-- Optional: add a favicon at assets/favicon.png -->
+  <!-- <link rel="icon" href="assets/favicon.png"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    :root {
+      --accent: #1F5FAD;        /* try #0E6B5C (teal), #1A1A1A (black), #9A3D1E (rust) */
+      --accent-dark: #164679;
+      --ink: #1A1A1A;
+      --text: #333333;
+      --muted: #5C5C5C;
+      --subtle: #6B6B6B;
+      --line: #ECECEC;
+      --placeholder: #F2F2F2;
+      --max: 1080px;
+      --nav-h: 68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-dark); }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, p { margin: 0; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    section, footer { scroll-margin-top: var(--nav-h); }
+    .band { border-top: 1px solid var(--line); }
+    .band > .container { padding-top: 72px; padding-bottom: 72px; }
+
+    /* ---------- Navigation ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 8px 24px; min-height: var(--nav-h);
+    }
+    .brand {
+      color: var(--ink); text-decoration: none; font-weight: 600; font-size: 18px;
+      letter-spacing: -0.01em; padding: 12px 0;
+    }
+    .brand:hover { color: var(--ink); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 4px; font-size: 15px; }
+    .nav-links a {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px;
+      color: var(--muted); text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.active { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+
+    /* ---------- Intro ---------- */
+    .intro {
+      display: flex; flex-wrap: wrap; gap: 56px; align-items: center;
+      padding-top: 88px; padding-bottom: 72px;
+    }
+    .headshot {
+      flex: 0 0 240px; height: 280px; border-radius: 8px; object-fit: cover;
+      background: var(--placeholder);
+    }
+    .intro-text { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+    .intro h1 { font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em; }
+    .lead { font-size: 19px; line-height: 1.6; color: var(--text); }
+    .intro-sub { font-size: 16px; line-height: 1.7; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+    .btn {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px;
+      border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px;
+      transition: background .15s, border-color .15s;
+    }
+    .btn-primary { background: var(--accent); color: #FFFFFF; }
+    .btn-primary:hover { background: var(--accent-dark); color: #FFFFFF; }
+    .btn-secondary { border: 1px solid #D6D6D6; color: var(--ink); }
+    .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* ---------- Section headings ---------- */
+    h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 32px; }
+    .section-note { font-size: 15px; color: var(--subtle); margin: -24px 0 32px; }
+    .eyebrow { font-size: 13px; font-weight: 600; color: var(--accent); }
+
+    /* ---------- Research ---------- */
+    .themes { display: flex; flex-wrap: wrap; gap: 40px; }
+    .theme { flex: 1 1 260px; }
+    .theme h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+    .theme p { font-size: 15px; line-height: 1.7; color: var(--muted); }
+
+    /* ---------- Publications ---------- */
+    .pubs { display: flex; flex-direction: column; gap: 28px; }
+    .pub-title { font-size: 17px; font-weight: 600; line-height: 1.5; margin-bottom: 6px; }
+    .pub-meta { font-size: 15px; line-height: 1.6; color: var(--muted); }
+    .pub-meta strong { color: var(--ink); font-weight: 600; }
+    .pub-group {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--subtle); margin-top: 12px;
+    }
+
+    /* ---------- Projects ---------- */
+    .ph {
+      border-radius: 8px; background: var(--placeholder);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--subtle); text-align: center; padding: 16px;
+    }
+    .featured { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 48px; }
+    .featured .media { flex: 1 1 420px; height: 300px; object-fit: cover; }
+    .featured-text { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+    .featured-text h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
+    .featured-text p { font-size: 15px; line-height: 1.7; color: var(--muted); }
+    .cards { display: flex; flex-wrap: wrap; gap: 32px; }
+    .card { flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+    .card .media { height: 190px; width: 100%; object-fit: cover; margin-bottom: 6px; }
+    .card h3 { font-size: 17px; font-weight: 600; line-height: 1.4; }
+    .card p { font-size: 15px; line-height: 1.6; color: var(--muted); }
+    .more { font-weight: 600; font-size: 15px; text-decoration: none; }
+    .more:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ---------- Education ---------- */
+    .section-head {
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+      gap: 16px; margin-bottom: 24px;
+    }
+    .section-head h2 { margin-bottom: 0; }
+    .edu { display: flex; flex-direction: column; gap: 20px; }
+    .edu-row { display: flex; flex-wrap: wrap; gap: 4px 32px; }
+    .edu-years { flex: 0 0 120px; font-size: 15px; color: var(--subtle); }
+    .edu-body { flex: 1 1 300px; }
+    .edu-degree { font-size: 16px; font-weight: 600; }
+    .edu-school { font-size: 15px; color: var(--muted); margin-top: 4px; }
+
+    /* ---------- Footer ---------- */
+    .footer-inner {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+      gap: 16px; padding-top: 48px; padding-bottom: 64px;
+    }
+    .footer-inner h2 { font-size: 18px; margin-bottom: 6px; }
+    .social { display: flex; flex-wrap: wrap; gap: 20px; font-size: 15px; }
+    .social a { color: var(--muted); }
+    .social a:hover { color: var(--ink); }
+    .copyright { font-size: 13px; color: var(--subtle); padding-bottom: 32px; }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 640px) {
+      .intro { padding-top: 48px; gap: 32px; }
+      .headshot { flex-basis: 160px; height: 190px; }
+      .intro h1 { font-size: 34px; }
+      .lead { font-size: 17px; }
+      .band > .container { padding-top: 56px; padding-bottom: 56px; }
+      .featured .media { height: 220px; }
+      .nav { padding-bottom: 6px; }
+      .nav-links a { padding: 0 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main">
+      <a class="brand" href="#home">[Your Name]</a>
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section id="home" class="container intro">
+      <!-- Replace with: <img class="headshot" src="assets/headshot.jpg" alt="Portrait of [Your Name]"> -->
+      <div class="headshot ph" role="img" aria-label="Placeholder for headshot">[Your photo]</div>
+      <div class="intro-text">
+        <h1>[Your Name]</h1>
+        <p class="lead">I use remote sensing and spatial data science to study [your research question, e.g. how cities and landscapes respond to a changing climate].</p>
+        <p class="intro-sub">I hold an MSc in [Program] from [University], awarded with Distinction. I am applying to PhD programs for Fall 2027.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="assets/CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn btn-secondary" href="mailto:[your email]">Email me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="band">
+      <div class="container">
+        <h2>Research interests</h2>
+        <div class="themes">
+          <div class="theme">
+            <h3>[Theme 1]</h3>
+            <p>[One or two sentences: the question you care about and why it matters.]</p>
+          </div>
+          <div class="theme">
+            <h3>[Theme 2]</h3>
+            <p>[One or two sentences on the methods you bring, e.g. satellite imagery, GIS modeling.]</p>
+          </div>
+          <div class="theme">
+            <h3>[Theme 3]</h3>
+            <p>[One or two sentences on the direction you want to take in a PhD.]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="band">
+      <div class="container">
+        <h2>Publications</h2>
+        <div class="pubs">
+          <div>
+            <p class="pub-title">[Paper title]</p>
+            <p class="pub-meta"><strong>[Your Name]</strong>, [Co-authors]. <em>[Journal]</em>, [Year]. <a href="#">DOI</a> · <a href="#">PDF</a></p>
+          </div>
+
+          <h3 class="pub-group">In preparation</h3>
+          <div>
+            <p class="pub-title">[Working title]</p>
+            <p class="pub-meta"><strong>[Your Name]</strong>, [Co-authors].</p>
+          </div>
+          <div>
+            <p class="pub-title">[Working title]</p>
+            <p class="pub-meta"><strong>[Your Name]</strong>, [Co-authors].</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="band">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-note">Selected work from my MSc at [University].</p>
+
+        <article class="featured">
+          <!-- Replace with: <img class="media" src="assets/capstone.jpg" alt="[Describe the map/figure]" style="border-radius:8px"> -->
+          <div class="media ph" role="img" aria-label="Placeholder for capstone figure">[Key map or figure from capstone]</div>
+          <div class="featured-text">
+            <span class="eyebrow">Capstone project · Distinction</span>
+            <h3>[Capstone title]</h3>
+            <p>[Two or three sentences: the question, the data and methods, and the main finding.]</p>
+            <a class="more" href="assets/capstone-report.pdf" target="_blank" rel="noopener">Read the report →</a>
+          </div>
+        </article>
+
+        <div class="cards">
+          <article class="card">
+            <!-- Replace with: <img class="media" src="assets/map.jpg" alt="..." style="border-radius:8px"> -->
+            <div class="media ph" role="img" aria-label="Placeholder for map image">[Map]</div>
+            <h3>[Map project title]</h3>
+            <p>[One or two lines on what the map shows.]</p>
+            <a class="more" href="#">View map →</a>
+          </article>
+
+          <article class="card">
+            <!-- Replace with: <img class="media" src="assets/webpage.jpg" alt="..." style="border-radius:8px"> -->
+            <div class="media ph" role="img" aria-label="Placeholder for webpage screenshot">[Webpage screenshot]</div>
+            <h3>[Webpage project title]</h3>
+            <p>[One or two lines on what visitors can explore.]</p>
+            <a class="more" href="#" target="_blank" rel="noopener">Open site →</a>
+          </article>
+
+          <article class="card">
+            <!-- Replace with: <img class="media" src="assets/storymap.jpg" alt="Hotspot map of stray animal deaths in [study area]" style="border-radius:8px"> -->
+            <div class="media ph" role="img" aria-label="Placeholder for a hotspot map from the StoryMap">[Hotspot map from the StoryMap]</div>
+            <span class="eyebrow">ArcGIS StoryMap · Group project, 2025</span>
+            <h3>Where Life Ends in Silence: Spatial Analysis of Stray Animal Deaths</h3>
+            <p>Identified high-incidence blackspots and the environmental factors driving them in [study area]. My role: [e.g. hotspot analysis and cartography].</p>
+            <a class="more" href="https://storymaps.arcgis.com/stories/4c71a0f011514bc39069cf7708ad2a1c" target="_blank" rel="noopener">View the StoryMap →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education / CV -->
+    <section id="cv" class="band">
+      <div class="container">
+        <div class="section-head">
+          <h2>Education</h2>
+          <a class="more" href="assets/CV.pdf" target="_blank" rel="noopener">Download full CV (PDF) →</a>
+        </div>
+        <div class="edu">
+          <div class="edu-row">
+            <span class="edu-years">[20XX–20XX]</span>
+            <div class="edu-body">
+              <p class="edu-degree">MSc, [Program] — with Distinction</p>
+              <p class="edu-school">[University], [Country]</p>
+            </div>
+          </div>
+          <div class="edu-row">
+            <span class="edu-years">[20XX–20XX]</span>
+            <div class="edu-body">
+              <p class="edu-degree">BSc, [Program]</p>
+              <p class="edu-school">[University], [Country]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact -->
+  <footer id="contact" class="band">
+    <div class="container footer-inner">
+      <div>
+        <h2>Contact</h2>
+        <a href="mailto:[your email]">[your email]</a>
+      </div>
+      <div class="social">
+        <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="#" target="_blank" rel="noopener">ORCID</a>
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="container copyright">© <span id="year">2026</span> [Your Name]</p>
+  </footer>
+
+  <script>
+    // Highlight the nav item for the section in view
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+      var byId = {};
+      links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+      var sections = Object.keys(byId).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!('IntersectionObserver' in window)) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('active'); });
+            byId[e.target.id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(function (s) { obs.observe(s); });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
