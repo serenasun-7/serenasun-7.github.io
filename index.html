@@ -130,6 +130,15 @@
     .card .media { height: 190px; width: 100%; object-fit: cover; margin-bottom: 6px; }
     .card h3 { font-size: 17px; font-weight: 600; line-height: 1.4; }
     .card p { font-size: 15px; line-height: 1.6; color: var(--muted); }
+    .map-embed { margin-top: 56px; scroll-margin-top: var(--nav-h); }
+    .map-embed .section-head { margin-bottom: 16px; }
+    .map-embed h3 { font-size: 20px; font-weight: 700; }
+    .map-embed iframe {
+      display: block; width: 100%; height: 620px; border: 1px solid var(--line);
+      border-radius: 8px; background: var(--placeholder);
+    }
+    .map-caption { font-size: 14px; color: var(--subtle); margin-top: 10px; }
+    @media (max-width: 640px) { .map-embed iframe { height: 460px; } }
     .more { font-weight: 600; font-size: 15px; text-decoration: none; }
     .more:hover { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -189,8 +198,7 @@
   <main>
     <!-- Intro -->
     <section id="home" class="container intro">
-      <!-- Replace with: <img class="headshot" src="assets/headshot.jpg" alt="Portrait of [Your Name]"> -->
-      <div class="headshot ph" role="img" aria-label="Placeholder for headshot">[Your photo]</div>
+      <img class="headshot" src="assets/headshot.JPG" alt="Portrait of [Your Name]">
       <div class="intro-text">
         <h1>[Your Name]</h1>
         <p class="lead">I use remote sensing and spatial data science to study [your research question, e.g. how cities and landscapes respond to a changing climate].</p>
@@ -273,11 +281,12 @@
           </article>
 
           <article class="card">
-            <!-- Replace with: <img class="media" src="assets/webpage.jpg" alt="..." style="border-radius:8px"> -->
-            <div class="media ph" role="img" aria-label="Placeholder for webpage screenshot">[Webpage screenshot]</div>
-            <h3>[Webpage project title]</h3>
-            <p>[One or two lines on what visitors can explore.]</p>
-            <a class="more" href="#" target="_blank" rel="noopener">Open site →</a>
+            <!-- Optional: replace with <img class="media" src="assets/sea-level.jpg" alt="Flooded areas of East Asia under a sea level rise scenario" style="border-radius:8px"> -->
+            <div class="media ph" role="img" aria-label="Placeholder for sea level rise map screenshot">[Sea level rise map screenshot]</div>
+            <span class="eyebrow">Interactive web map</span>
+            <h3>Sea Level Rise Simulation: Impacts on East Asia</h3>
+            <p>Shows the land and major cities flooded under four scenarios, from today's sea level to +75 m, using GTOPO30 elevation data.</p>
+            <a class="more" href="#sea-level-map">Try it below ↓</a>
           </article>
 
           <article class="card">
@@ -288,6 +297,15 @@
             <p>Identified high-incidence blackspots and the environmental factors driving them in [study area]. My role: [e.g. hotspot analysis and cartography].</p>
             <a class="more" href="https://storymaps.arcgis.com/stories/4c71a0f011514bc39069cf7708ad2a1c" target="_blank" rel="noopener">View the StoryMap →</a>
           </article>
+        </div>
+
+        <div id="sea-level-map" class="map-embed">
+          <div class="section-head">
+            <h3>Explore: Sea Level Rise Simulation</h3>
+            <a class="more" href="https://ecshz.github.io/sea-level-rise-map/" target="_blank" rel="noopener">Open full screen →</a>
+          </div>
+          <iframe src="https://ecshz.github.io/sea-level-rise-map/" title="Interactive sea level rise simulation map of East Asia" loading="lazy" allowfullscreen></iframe>
+          <p class="map-caption">Select a scenario (0 m, +5 m, +50 m or +75 m) to see which areas would be flooded.</p>
         </div>
       </div>
     </section>
