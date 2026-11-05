@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV | Huizhen (Serena) Sun</title>
+  <meta name="description" content="Curriculum vitae of Huizhen (Serena) Sun.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    :root {
+      --accent: #1F5FAD;        /* try #0E6B5C (teal), #1A1A1A (black), #9A3D1E (rust) */
+      --accent-dark: #164679;
+      --ink: #1A1A1A;
+      --text: #333333;
+      --muted: #5C5C5C;
+      --subtle: #6B6B6B;
+      --line: #ECECEC;
+      --placeholder: #F2F2F2;
+      --max: 1080px;
+      --nav-h: 68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-dark); }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, p { margin: 0; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    section, footer { scroll-margin-top: var(--nav-h); }
+    .band { border-top: 1px solid var(--line); }
+    .band > .container { padding-top: 72px; padding-bottom: 72px; }
+
+    /* ---------- Navigation ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 8px 24px; min-height: var(--nav-h);
+    }
+    .brand {
+      color: var(--ink); text-decoration: none; font-weight: 600; font-size: 18px;
+      letter-spacing: -0.01em; padding: 12px 0;
+    }
+    .brand:hover { color: var(--ink); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 4px; font-size: 15px; }
+    .nav-links a {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px;
+      color: var(--muted); text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.active { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+
+    /* ---------- Intro ---------- */
+    .intro {
+      display: flex; flex-wrap: wrap; gap: 48px; align-items: center;
+      padding-top: 88px; padding-bottom: 72px;
+    }
+    .headshot {
+      flex: 0 0 240px; height: 280px; border-radius: 8px; object-fit: cover;
+      background: var(--placeholder);
+    }
+    .intro-text { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+    .intro-cols { display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: flex-start; }
+    .intro-main { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+    .interests { flex: 0 1 230px; min-width: 210px; border-left: 1px solid var(--line); padding-left: 32px; }
+    .interests h2 {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--subtle); margin: 4px 0 14px;
+    }
+    .interests ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+    .interests li { font-size: 16px; font-weight: 600; line-height: 1.4; padding-left: 18px; position: relative; }
+    .interests li::before {
+      content: ""; position: absolute; left: 0; top: 0.5em; width: 7px; height: 7px;
+      border-radius: 50%; background: var(--accent);
+    }
+    .intro h1 { font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em; }
+    .lead { font-size: 17px; line-height: 1.7; color: var(--text); text-align: justify; }
+    .intro-sub { font-size: 16px; line-height: 1.7; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+    .btn {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px;
+      border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px;
+      transition: background .15s, border-color .15s;
+    }
+    .btn-primary { background: var(--accent); color: #FFFFFF; }
+    .btn-primary:hover { background: var(--accent-dark); color: #FFFFFF; }
+    .btn-secondary { border: 1px solid #D6D6D6; color: var(--ink); }
+    .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* ---------- Section headings ---------- */
+    h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 32px; }
+    .section-note { font-size: 15px; color: var(--subtle); margin: -24px 0 32px; }
+    .eyebrow { font-size: 13px; font-weight: 600; color: var(--accent); }
+
+
+    /* ---------- Publications ---------- */
+    .pubs { display: flex; flex-direction: column; gap: 28px; }
+    .pub-title { font-size: 17px; font-weight: 600; line-height: 1.5; margin-bottom: 6px; }
+    .pub-meta { font-size: 15px; line-height: 1.6; color: var(--muted); }
+    .pub-meta strong { color: var(--ink); font-weight: 600; }
+    .pub-group {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--subtle); margin-top: 12px;
+    }
+
+    /* ---------- Projects ---------- */
+    .ph {
+      border-radius: 8px; background: var(--placeholder);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--subtle); text-align: center; padding: 16px;
+    }
+    .featured { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 48px; }
+    .featured .media { flex: 1 1 420px; height: 300px; object-fit: cover; }
+    .featured-text { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+    .featured-text h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
+    .featured-text p { font-size: 15px; line-height: 1.7; color: var(--muted); }
+    .cards { display: flex; flex-wrap: wrap; gap: 32px; }
+    .card { flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+    .card .media { height: 190px; width: 100%; object-fit: cover; margin-bottom: 6px; }
+    .card h3 { font-size: 17px; font-weight: 600; line-height: 1.4; }
+    .card p { font-size: 15px; line-height: 1.6; color: var(--muted); }
+    .featured.reverse .media { order: 2; }
+    .featured img.media { border-radius: 8px; border: 1px solid var(--line); background: #FFFFFF; }
+    .featured.contain img.media { object-fit: contain; }
+    .featured.stack { gap: 24px; }
+    .featured.stack .media { flex-basis: 100%; height: auto; }
+    .featured.stack .featured-text { flex-basis: 100%; }
+    .links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 4px; }
+    .more { font-weight: 600; font-size: 15px; text-decoration: none; }
+    .more:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ---------- Education ---------- */
+    .section-head {
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+      gap: 16px; margin-bottom: 24px;
+    }
+    .section-head h2 { margin-bottom: 0; }
+    .edu { display: flex; flex-direction: column; gap: 20px; }
+    .edu-row { display: flex; flex-wrap: wrap; gap: 4px 32px; }
+    .edu-years { flex: 0 0 120px; font-size: 15px; color: var(--subtle); }
+    .edu-body { flex: 1 1 300px; }
+    .edu-degree { font-size: 16px; font-weight: 600; }
+    .edu-school { font-size: 15px; color: var(--muted); margin-top: 4px; }
+
+    /* ---------- Footer ---------- */
+    .footer-inner {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+      gap: 16px; padding-top: 48px; padding-bottom: 64px;
+    }
+    .footer-inner h2 { font-size: 18px; margin-bottom: 6px; }
+    .social { display: flex; flex-wrap: wrap; gap: 20px; font-size: 15px; }
+    .social a { color: var(--muted); }
+    .social a:hover { color: var(--ink); }
+    .copyright { font-size: 13px; color: var(--subtle); padding-bottom: 32px; }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 640px) {
+      .intro { padding-top: 48px; gap: 32px; }
+      .headshot { flex-basis: 160px; height: 190px; }
+      .intro h1 { font-size: 34px; }
+      .lead { font-size: 16px; }
+      .interests { flex-basis: 100%; border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 20px; }
+      .band > .container { padding-top: 56px; padding-bottom: 56px; }
+      .featured .media { height: 220px; }
+      .featured.stack .media { height: auto; }
+      .nav { padding-bottom: 6px; }
+      .nav-links a { padding: 0 10px; }
+    }
+
+    /* ---------- CV page ---------- */
+    .cv-page { padding-top: 64px; padding-bottom: 72px; max-width: 860px; }
+    .cv-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 40px; }
+    .cv-top h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; }
+    .cv-top p { font-size: 15px; color: var(--muted); margin-top: 6px; }
+    .cv-section { margin-bottom: 40px; }
+    .cv-section h2 { font-size: 20px; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    .cv-entry { margin-bottom: 20px; }
+    .cv-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; }
+    .cv-title { font-size: 16px; font-weight: 600; }
+    .cv-date { font-size: 14px; color: var(--subtle); white-space: nowrap; }
+    .cv-org { font-size: 15px; color: var(--muted); font-style: italic; }
+    .cv-entry ul, .cv-list { margin: 8px 0 0; padding-left: 20px; }
+    .cv-entry li, .cv-list li { font-size: 15px; line-height: 1.65; color: var(--text); margin-bottom: 4px; }
+    .cv-text { font-size: 15px; line-height: 1.7; color: var(--text); }
+    .cv-pubs { margin: 0; padding-left: 28px; }
+    .cv-pubs li { font-size: 15px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
+    .cv-pubs li strong { font-weight: 600; }
+    .cv-subhead { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--subtle); margin: 4px 0 10px; }
+    .skills { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 8px 20px; font-size: 15px; line-height: 1.6; }
+    .skills dt { font-weight: 600; }
+    .skills dd { margin: 0; color: var(--text); }
+    .cv-download { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+    .cv-download p { font-size: 15px; color: var(--muted); }
+    @media (max-width: 640px) {
+      .cv-page { padding-top: 40px; }
+      .cv-top h1 { font-size: 30px; }
+      .skills { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+      .skills dd { margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main">
+      <a class="brand" href="index.html">Serena</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="cv.html" class="active" aria-current="page">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container cv-page">
+    <div class="cv-top">
+      <div>
+        <h1>Curriculum Vitae</h1>
+        <p>Huizhen (Serena) Sun · Hong Kong SAR, China</p>
+      </div>
+      <a class="more" href="#download">Download PDF ↓</a>
+    </div>
+
+    <section class="cv-section">
+      <h2>Research Interests</h2>
+      <p class="cv-text">Spatial data science, ocean colour remote sensing, and coastal resilience and climate adaptation.</p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">MSc in Geospatial Data Science, with Distinction</span><span class="cv-date">Sep 2025 – Aug 2026</span></div>
+            <div class="cv-row"><span class="cv-org">The University of Hong Kong</span><span class="cv-date">Hong Kong SAR, China</span></div>
+            <ul>
+              <li>GPA: 3.61/4.3 · Capstone supervisor: Prof. Hongsheng Zhang</li>
+              <li>Relevant coursework: Satellite Data Processing and Information Extraction; Spatial Statistics; Cloud Computing for Geospatial Data Analytics; Geographic Information Systems</li>
+            </ul>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">Bachelor of Management in E-Commerce</span><span class="cv-date">Sep 2021 – Jun 2025</span></div>
+            <div class="cv-row"><span class="cv-org">Xidian University</span><span class="cv-date">Xi'an, China</span></div>
+            <ul>
+              <li>GPA: 3.6/4.0 (84%)</li>
+              <li>Relevant coursework: Probability Theory and Mathematical Statistics; Applied Statistics; Big Data Analysis; R and Complex Data Analytics; Database Principles</li>
+            </ul>
+          </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Publications</h2>
+      <p class="cv-subhead">Peer-reviewed journal articles</p>
+      <ol class="cv-pubs">
+        <li>Zhao, D., Luo, Q., Lai, X., <strong>Sun, H.</strong>, Qiu, Z., Zhang, H., &amp; Sun, Z. (2026). Normalized dynamic fluorescence height: An alternative algorithm for chlorophyll <em>a</em> estimation in algae-dominated waters using hyperspectral remote sensing reflectance from in situ and spaceborne imagers. <em>Remote Sensing, 18</em>(14), 2332. <a href="https://doi.org/10.3390/rs18142332" target="_blank" rel="noopener">doi:10.3390/rs18142332</a></li>
+      </ol>
+      <p class="cv-subhead" style="margin-top: 18px">Manuscripts in preparation</p>
+      <ol class="cv-pubs" start="2">
+        <li><strong>Sun, H.</strong>, Zhao, D., &amp; Sun, Z. (in preparation). Reconstructing gap-free daily total nitrogen and total phosphorus fields in small and medium-sized lakes from a multi-satellite virtual constellation: Futou Lake, China.</li>
+        <li><strong>Sun, H.</strong>, Zhao, D., Zhang, H., &amp; Sun, Z. (in preparation). Decadal regime shifts and drivers in Xijiang River water quality.</li>
+      </ol>
+    </section>
+
+    <section class="cv-section">
+      <h2>Research Experience</h2>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">MSc Capstone Project</span><span class="cv-date">Jan 2026 – Aug 2026</span></div>
+            <div class="cv-row"><span class="cv-org">Spatiotemporal Dynamics of Coastal Water Quality: The Hidden Role of Sea Level Rise</span><span class="cv-date">HKU</span></div>
+            <ul>
+              <li><strong>Question:</strong> Whether coastal morphology determines the direction of sea-level-rise effects on water quality in urbanised estuaries.</li>
+              <li><strong>Data &amp; methods:</strong> 31 years of monthly data from 94 stations, combined with satellite altimetry, ocean and wave reanalysis, and coastal geophysical data; panel regression, causal mediation, and spatial autoregressive models in Python.</li>
+              <li><strong>Findings:</strong> A morphology-dependent sign reversal in the response across Hong Kong; stratification mediates 94% of the effect in enclosed embayments, robust to ENSO controls.</li>
+            </ul>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">Multi-Satellite Chlorophyll-<em>a</em> Retrieval for Lake Taihu</span><span class="cv-date">Sep 2025 – Dec 2025</span></div>
+            <div class="cv-row"><span class="cv-org">Project Leader — Course GEOG7304, Satellite Data Processing and Information Extraction</span></div>
+            <ul>
+              <li>Led an 11-member team end to end: defined the research questions, planned the project, assigned tasks, and coordinated integration of results; awarded full marks.</li>
+              <li>Designed a workflow harmonising Landsat 8/9, Sentinel-2, and GF-1 imagery to 30 m Landsat-equivalent R<sub>rs</sub> (ACOLITE; band adjustment calibrated with in situ hyperspectral R<sub>rs</sub>), with in situ data for training and GOCI data for validation.</li>
+              <li>Built a Random Forest retrieval model (R² = 0.810, RMSE = 2.04 µg/L) that outperformed linear regression baselines, and produced multi-year, lake-wide chlorophyll-<em>a</em> maps.</li>
+            </ul>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">Visiting Student, Ocean Colour Remote Sensing</span><span class="cv-date">Sep 2024 – Jul 2025</span></div>
+            <div class="cv-row"><span class="cv-org">School of Innovation and Entrepreneurship, SUSTech — Supervisor: Zhaohua Sun</span><span class="cv-date">Shenzhen, China</span></div>
+            <ul>
+              <li>Trained in ocean colour science, marine optics, and the radiative properties of natural waters.</li>
+              <li>Developed Python-based water quality retrieval algorithms from remote sensing reflectance and analysed the spatial distribution and temporal dynamics of water quality parameters.</li>
+            </ul>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">Mathematical Contest in Modeling (MCM): Reimagine Masai Mara</span><span class="cv-date">Feb 2023</span></div>
+            <div class="cv-row"><span class="cv-org">Team project in remote sensing and environmental modelling</span></div>
+            <ul>
+              <li>Extracted land use, vegetation, and water information from remote sensing data for ecosystem modelling.</li>
+              <li>Coupled ecosystem health and economic impact models through multi-objective optimisation to design and evaluate management strategies.</li>
+            </ul>
+          </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Professional Experience</h2>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">Remote Sensing Engineer (Part-time)</span><span class="cv-date">May 2026 – Aug 2026</span></div>
+            <div class="cv-row"><span class="cv-org">AIEyes Technologies (Hong Kong) Co., Limited</span><span class="cv-date">Hong Kong SAR</span></div>
+            <ul>
+              <li>Developed hyperspectral retrieval algorithm packages for 25+ water quality parameters (e.g., chlorophyll, CDOM, SPM), with an RMSE below 0.15.</li>
+              <li>Contributed to a Hong Kong Science Park incubation program on AI-enabled water environment monitoring.</li>
+            </ul>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">Data Engineer Assistant (Intern)</span><span class="cv-date">Jul 2024 – Aug 2024</span></div>
+            <div class="cv-row"><span class="cv-org">Anhua Ocean Intelligent Equipment (Shenzhen) Co., Ltd.</span><span class="cv-date">Shenzhen, China</span></div>
+            <ul>
+              <li>Processed apparent optical property (AOP) data in Python to derive remote sensing reflectance (R<sub>rs</sub>).</li>
+              <li>Drafted requirements and webpage prototypes for a platform sharing AOP data with researchers.</li>
+            </ul>
+          </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Additional Training</h2>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title">Training Program in Machine Learning and NLP</span><span class="cv-date">Apr 2024 – Jun 2024</span></div>
+            <div class="cv-row"><span class="cv-org">Columbia University (online program)</span></div>
+            <ul>
+              <li>Applied machine learning and NLP (sentiment analysis, topic modelling) in Python to user reviews for location-based services.</li>
+            </ul>
+          </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Honors &amp; Awards</h2>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title"><span style="font-weight:400"><em>Successful Participant</em>, Mathematical Contest in Modeling (MCM)</span></span><span class="cv-date">May 2024</span></div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title"><span style="font-weight:400">Third-Class Scholarship, Xidian University</span></span><span class="cv-date">Oct 2023</span></div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-row"><span class="cv-title"><span style="font-weight:400">Provincial Third Prize, 14th “Zhengda Cup” National Market Research Competition</span></span><span class="cv-date">Apr 2023</span></div>
+          </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Programming</dt><dd>Python, R, MATLAB, Java, SQL (MySQL); intermediate C and LaTeX</dd>
+        <dt>Geospatial</dt><dd>ArcGIS, Google Earth Engine, GeoPandas</dd>
+        <dt>Statistics &amp; ML</dt><dd>Random forest, panel regression, causal mediation analysis, spatial autoregressive models, clustering, NLP; SPSS</dd>
+        <dt>Languages</dt><dd>Chinese (native), English (fluent), German (intermediate)</dd>
+        <dt>Tests</dt><dd>IELTS 7.0 (Reading 8.0, Listening 7.5, Writing 6.5, Speaking 6.0), Jun 2024</dd>
+      </dl>
+    </section>
+
+    <div id="download" class="cv-download">
+      <p>Want a copy? The PDF version has the same content in a two-page format.</p>
+      <a class="btn btn-primary" href="assets/CV.pdf" download="Huizhen_Sun_CV.pdf">Download CV (PDF)</a>
+    </div>
+  </main>
+
+  <footer id="contact" class="band">
+    <div class="container footer-inner">
+      <div>
+        <h2>Contact</h2>
+        <a href="mailto:jnsun030@gmail.com">jnsun030@gmail.com</a>
+      </div>
+      <div class="social">
+        <a href="https://orcid.org/0009-0005-9936-5863" target="_blank" rel="noopener">ORCID: 0009-0005-9936-5863</a>
+      </div>
+    </div>
+    <p class="container copyright">© <span id="year">2026</span> Serena</p>
+  </footer>
+
+</body>
+</html>
