@@ -141,6 +141,9 @@
     .featured.reverse .media { order: 2; }
     .featured img.media { border-radius: 8px; border: 1px solid var(--line); background: #FFFFFF; }
     .featured.contain img.media { object-fit: contain; }
+    .featured.stack { gap: 24px; }
+    .featured.stack .media { flex-basis: 100%; height: auto; }
+    .featured.stack .featured-text { flex-basis: 100%; }
     .role { font-size: 15px; line-height: 1.7; color: var(--muted); }
     .role strong { color: var(--ink); font-weight: 600; }
     .links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 4px; }
@@ -180,6 +183,7 @@
       .interests { flex-basis: 100%; border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 20px; }
       .band > .container { padding-top: 56px; padding-bottom: 56px; }
       .featured .media { height: 220px; }
+      .featured.stack .media { height: auto; }
       .nav { padding-bottom: 6px; }
       .nav-links a { padding: 0 10px; }
     }
@@ -255,16 +259,13 @@
         <h2>Projects</h2>
         <p class="section-note">Selected work from my MSc at The University of Hong Kong.</p>
 
-        <article class="featured">
-          <img class="media" src="assets/flood-gee-app.jpg" alt="Google Earth Engine app showing flooded areas around Foshan with a population exposure chart" loading="lazy">
+        <article class="featured stack">
+          <img class="media" src="assets/taihu-chla-maps.jpg" alt="Three maps of chlorophyll-a concentration across Lake Taihu for 2020, 2022 and 2023, with higher values along the northern bays and eastern shore" loading="lazy">
           <div class="featured-text">
-            <span class="eyebrow">Google Earth Engine app · GEOG7310 group project</span>
-            <h3>Flood Exposure in the Pearl River Delta During the June 2022 Extreme Rainfall</h3>
-            <p>Optical imagery was fully clouded at the flood peak, so we mapped inundation across the Greater Bay Area from 10 m Sentinel-1 radar over seven phases of the "Dragon Boat Water" event, then overlaid WorldPop data to estimate who was exposed. Exposure peaked at about 23,800 people during the receding phase rather than at peak water, showing that human impact lags behind the flood itself.</p>
-            <p class="role"><strong>My role:</strong> designed the methodology: SAR preprocessing, Otsu-threshold flood extraction, and refinement of the flood masks using JRC surface water and SRTM terrain.</p>
-            <div class="links">
-              <a class="more" href="https://wanglu-488211.projects.earthengine.app/view/g17-gee" target="_blank" rel="noopener">Open the app →</a>
-            </div>
+            <span class="eyebrow">Multi-satellite remote sensing · GEOG7304 group project</span>
+            <h3>Chlorophyll-a Retrieval in Lake Taihu from Multi-Satellite Data Fusion</h3>
+            <p>Harmonized GF-1 WFV, Landsat 8/9 OLI and Sentinel-2 MSI imagery into Landsat-equivalent surface reflectance using spectral band adjustment functions calibrated with in situ hyperspectral data, then trained a Random Forest on 27 spectral features to map chlorophyll-a across the lake for 2020, 2022 and 2023. The model reached R² = 0.810 (RMSE 2.04 µg/L, MAE 1.53 µg/L) in 5-fold cross-validation. The field data were limited to 13 stations, and the model underestimates bloom peaks compared with GOCI observations.</p>
+            <p class="role"><strong>My role:</strong> project leader for a 12-person team.</p>
           </div>
         </article>
 
