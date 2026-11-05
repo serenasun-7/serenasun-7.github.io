@@ -78,11 +78,13 @@
       flex: 0 0 240px; height: 280px; border-radius: 8px; object-fit: cover;
       background: var(--placeholder);
     }
-    .intro-text { flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
-    .interests { flex: 0 1 250px; min-width: 220px; border-top: 2px solid var(--ink); padding-top: 16px; }
+    .intro-text { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+    .intro-cols { display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: flex-start; }
+    .intro-main { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+    .interests { flex: 0 1 230px; min-width: 210px; border-left: 1px solid var(--line); padding-left: 32px; }
     .interests h2 {
       font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--subtle); margin-bottom: 14px;
+      color: var(--subtle); margin: 4px 0 14px;
     }
     .interests ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
     .interests li { font-size: 16px; font-weight: 600; line-height: 1.4; padding-left: 18px; position: relative; }
@@ -91,7 +93,7 @@
       border-radius: 50%; background: var(--accent);
     }
     .intro h1 { font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em; }
-    .lead { font-size: 19px; line-height: 1.6; color: var(--text); }
+    .lead { font-size: 17px; line-height: 1.7; color: var(--text); text-align: justify; }
     .intro-sub { font-size: 16px; line-height: 1.7; color: var(--muted); }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
     .btn {
@@ -174,7 +176,8 @@
       .intro { padding-top: 48px; gap: 32px; }
       .headshot { flex-basis: 160px; height: 190px; }
       .intro h1 { font-size: 34px; }
-      .lead { font-size: 17px; }
+      .lead { font-size: 16px; }
+      .interests { flex-basis: 100%; border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 20px; }
       .band > .container { padding-top: 56px; padding-bottom: 56px; }
       .featured .media { height: 220px; }
       .nav { padding-bottom: 6px; }
@@ -203,20 +206,24 @@
       <img class="headshot" src="assets/headshot.JPG" alt="headshot">
       <div class="intro-text">
         <h1>Huizhen(Serena) Sun</h1>
+        <div class="intro-cols">
+          <div class="intro-main">
         <p class="lead">I study how coastal and inland waters are changing in response to climate and human activities, using satellite remote sensing and spatial data science. My research spans water quality monitoring through remote sensing and coastal environmental change, with the aim of informing sustainable water management and climate adaptation.</p>
         <div class="actions">
           <a class="btn btn-primary" href="assets/CV.pdf" target="_blank" rel="noopener">Download CV</a>
           <a class="btn btn-secondary" href="mailto:jnsun030@gmail.com">Email me</a>
         </div>
+          </div>
+          <aside class="interests" aria-labelledby="interests-title">
+            <h2 id="interests-title">Research interests</h2>
+            <ul>
+              <li>Spatial Data Science</li>
+              <li>Ocean Color Remote Sensing</li>
+              <li>Coastal Resilience and Climate Adaptation</li>
+            </ul>
+          </aside>
+        </div>
       </div>
-      <aside class="interests" aria-labelledby="interests-title">
-        <h2 id="interests-title">Research interests</h2>
-        <ul>
-          <li>Spatial Data Science</li>
-          <li>Ocean Color Remote Sensing</li>
-          <li>Coastal Resilience and Climate Adaptation</li>
-        </ul>
-      </aside>
     </section>
 
     <!-- Publications -->
