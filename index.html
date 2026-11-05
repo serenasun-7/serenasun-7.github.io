@@ -185,6 +185,54 @@
       .nav { padding-bottom: 6px; }
       .nav-links a { padding: 0 10px; }
     }
+    /* ---------- CV pop-up ---------- */
+    html.modal-open { overflow: hidden; }
+    .cv-dialog {
+      width: min(880px, calc(100vw - 32px)); max-height: calc(100vh - 48px);
+      padding: 0; border: 0; border-radius: 12px; color: var(--ink); background: #FFFFFF;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.25); overflow: hidden;
+    }
+    .cv-dialog::backdrop { background: rgba(20, 20, 20, 0.5); }
+    .cv-dialog[open] { display: flex; flex-direction: column; }
+    .cv-bar {
+      flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 12px 16px 12px 32px; border-bottom: 1px solid var(--line); background: #FFFFFF;
+    }
+    .cv-bar h2 { font-size: 18px; margin: 0; }
+    .cv-bar-actions { display: flex; align-items: center; gap: 4px; }
+    .cv-bar-actions .more { padding: 0 12px; min-height: 44px; display: inline-flex; align-items: center; }
+    .cv-close {
+      width: 44px; height: 44px; border: 0; border-radius: 8px; background: transparent; color: var(--muted);
+      display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+    }
+    .cv-close:hover { background: var(--placeholder); color: var(--ink); }
+    .cv-body { overflow-y: auto; padding: 28px 32px 32px; overscroll-behavior: contain; }
+    .cv-section { margin-bottom: 40px; }
+    .cv-section h2 { font-size: 20px; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    .cv-entry { margin-bottom: 20px; }
+    .cv-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; }
+    .cv-title { font-size: 16px; font-weight: 600; }
+    .cv-date { font-size: 14px; color: var(--subtle); white-space: nowrap; }
+    .cv-org { font-size: 15px; color: var(--muted); font-style: italic; }
+    .cv-entry ul, .cv-list { margin: 8px 0 0; padding-left: 20px; }
+    .cv-entry li, .cv-list li { font-size: 15px; line-height: 1.65; color: var(--text); margin-bottom: 4px; }
+    .cv-text { font-size: 15px; line-height: 1.7; color: var(--text); }
+    .cv-pubs { margin: 0; padding-left: 28px; }
+    .cv-pubs li { font-size: 15px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
+    .cv-pubs li strong { font-weight: 600; }
+    .cv-subhead { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--subtle); margin: 4px 0 10px; }
+    .skills { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 8px 20px; font-size: 15px; line-height: 1.6; }
+    .skills dt { font-weight: 600; }
+    .skills dd { margin: 0; color: var(--text); }
+    .cv-download { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+    .cv-download p { font-size: 15px; color: var(--muted); }
+    @media (max-width: 640px) {
+      .cv-bar { padding-left: 20px; }
+      .cv-bar-actions .more { display: none; }
+      .cv-body { padding: 20px; }
+      .skills { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+      .skills dd { margin-bottom: 10px; }
+    }
   </style>
 </head>
 <body>
@@ -212,7 +260,7 @@
           <div class="intro-main">
         <p class="lead">I study how coastal and inland waters are changing in response to climate and human activities, using satellite remote sensing and spatial data science. My research spans water quality monitoring through remote sensing and coastal environmental change, with the aim of informing sustainable water management and climate adaptation.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="cv.html">View CV</a>
+          <a class="btn btn-primary" href="assets/CV.pdf" data-open-cv>View CV</a>
           <a class="btn btn-secondary" href="mailto:jnsun030@gmail.com">Email me</a>
         </div>
           </div>
@@ -324,6 +372,155 @@
     <p class="container copyright">© <span id="year">2026</span> Serena</p>
   </footer>
 
+  <dialog id="cv-dialog" class="cv-dialog" aria-labelledby="cv-dialog-title">
+    <div class="cv-bar">
+      <h2 id="cv-dialog-title">Curriculum Vitae</h2>
+      <div class="cv-bar-actions">
+        <a class="more" href="assets/CV.pdf" download="Huizhen_Sun_CV.pdf">Download PDF</a>
+        <button type="button" class="cv-close" aria-label="Close CV" data-close-cv>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="cv-body">
+      <section class="cv-section">
+        <h2>Research Interests</h2>
+        <p class="cv-text">Spatial data science, ocean colour remote sensing, and coastal resilience and climate adaptation.</p>
+      </section>
+
+      <section class="cv-section">
+        <h2>Education</h2>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">MSc in Geospatial Data Science, with Distinction</span><span class="cv-date">Sep 2025 – Aug 2026</span></div>
+              <div class="cv-row"><span class="cv-org">The University of Hong Kong</span><span class="cv-date">Hong Kong SAR, China</span></div>
+              <ul>
+                <li>GPA: 3.61/4.3 · Capstone supervisor: Prof. Hongsheng Zhang</li>
+                <li>Relevant coursework: Satellite Data Processing and Information Extraction; Spatial Statistics; Cloud Computing for Geospatial Data Analytics; Geographic Information Systems</li>
+              </ul>
+            </div>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">Bachelor of Management in E-Commerce</span><span class="cv-date">Sep 2021 – Jun 2025</span></div>
+              <div class="cv-row"><span class="cv-org">Xidian University</span><span class="cv-date">Xi'an, China</span></div>
+              <ul>
+                <li>GPA: 3.6/4.0 (84%)</li>
+                <li>Relevant coursework: Probability Theory and Mathematical Statistics; Applied Statistics; Big Data Analysis; R and Complex Data Analytics; Database Principles</li>
+              </ul>
+            </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Publications</h2>
+        <p class="cv-subhead">Peer-reviewed journal articles</p>
+        <ol class="cv-pubs">
+          <li>Zhao, D., Luo, Q., Lai, X., <strong>Sun, H.</strong>, Qiu, Z., Zhang, H., &amp; Sun, Z. (2026). Normalized dynamic fluorescence height: An alternative algorithm for chlorophyll <em>a</em> estimation in algae-dominated waters using hyperspectral remote sensing reflectance from in situ and spaceborne imagers. <em>Remote Sensing, 18</em>(14), 2332. <a href="https://doi.org/10.3390/rs18142332" target="_blank" rel="noopener">doi:10.3390/rs18142332</a></li>
+        </ol>
+        <p class="cv-subhead" style="margin-top: 18px">Manuscripts in preparation</p>
+        <ol class="cv-pubs" start="2">
+          <li><strong>Sun, H.</strong>, Zhao, D., &amp; Sun, Z. (in preparation). Reconstructing gap-free daily total nitrogen and total phosphorus fields in small and medium-sized lakes from a multi-satellite virtual constellation: Futou Lake, China.</li>
+          <li><strong>Sun, H.</strong>, Zhao, D., Zhang, H., &amp; Sun, Z. (in preparation). Decadal regime shifts and drivers in Xijiang River water quality.</li>
+        </ol>
+      </section>
+
+      <section class="cv-section">
+        <h2>Research Experience</h2>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">MSc Capstone Project</span><span class="cv-date">Jan 2026 – Aug 2026</span></div>
+              <div class="cv-row"><span class="cv-org">Spatiotemporal Dynamics of Coastal Water Quality: The Hidden Role of Sea Level Rise</span><span class="cv-date">HKU</span></div>
+              <ul>
+                <li><strong>Question:</strong> Whether coastal morphology determines the direction of sea-level-rise effects on water quality in urbanised estuaries.</li>
+                <li><strong>Data &amp; methods:</strong> 31 years of monthly data from 94 stations, combined with satellite altimetry, ocean and wave reanalysis, and coastal geophysical data; panel regression, causal mediation, and spatial autoregressive models in Python.</li>
+                <li><strong>Findings:</strong> A morphology-dependent sign reversal in the response across Hong Kong; stratification mediates 94% of the effect in enclosed embayments, robust to ENSO controls.</li>
+              </ul>
+            </div>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">Multi-Satellite Chlorophyll-<em>a</em> Retrieval for Lake Taihu</span><span class="cv-date">Sep 2025 – Dec 2025</span></div>
+              <div class="cv-row"><span class="cv-org">Project Leader — Course GEOG7304, Satellite Data Processing and Information Extraction</span></div>
+              <ul>
+                <li>Led an 11-member team end to end: defined the research questions, planned the project, assigned tasks, and coordinated integration of results; awarded full marks.</li>
+                <li>Designed a workflow harmonising Landsat 8/9, Sentinel-2, and GF-1 imagery to 30 m Landsat-equivalent R<sub>rs</sub> (ACOLITE; band adjustment calibrated with in situ hyperspectral R<sub>rs</sub>), with in situ data for training and GOCI data for validation.</li>
+                <li>Built a Random Forest retrieval model (R² = 0.810, RMSE = 2.04 µg/L) that outperformed linear regression baselines, and produced multi-year, lake-wide chlorophyll-<em>a</em> maps.</li>
+              </ul>
+            </div>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">Visiting Student, Ocean Colour Remote Sensing</span><span class="cv-date">Sep 2024 – Jul 2025</span></div>
+              <div class="cv-row"><span class="cv-org">School of Innovation and Entrepreneurship, SUSTech — Supervisor: Zhaohua Sun</span><span class="cv-date">Shenzhen, China</span></div>
+              <ul>
+                <li>Trained in ocean colour science, marine optics, and the radiative properties of natural waters.</li>
+                <li>Developed Python-based water quality retrieval algorithms from remote sensing reflectance and analysed the spatial distribution and temporal dynamics of water quality parameters.</li>
+              </ul>
+            </div>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">Mathematical Contest in Modeling (MCM): Reimagine Masai Mara</span><span class="cv-date">Feb 2023</span></div>
+              <div class="cv-row"><span class="cv-org">Team project in remote sensing and environmental modelling</span></div>
+              <ul>
+                <li>Extracted land use, vegetation, and water information from remote sensing data for ecosystem modelling.</li>
+                <li>Coupled ecosystem health and economic impact models through multi-objective optimisation to design and evaluate management strategies.</li>
+              </ul>
+            </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Professional Experience</h2>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">Remote Sensing Engineer (Part-time)</span><span class="cv-date">May 2026 – Aug 2026</span></div>
+              <div class="cv-row"><span class="cv-org">AIEyes Technologies (Hong Kong) Co., Limited</span><span class="cv-date">Hong Kong SAR</span></div>
+              <ul>
+                <li>Developed hyperspectral retrieval algorithm packages for 25+ water quality parameters (e.g., chlorophyll, CDOM, SPM), with an RMSE below 0.15.</li>
+                <li>Contributed to a Hong Kong Science Park incubation program on AI-enabled water environment monitoring.</li>
+              </ul>
+            </div>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">Data Engineer Assistant (Intern)</span><span class="cv-date">Jul 2024 – Aug 2024</span></div>
+              <div class="cv-row"><span class="cv-org">Anhua Ocean Intelligent Equipment (Shenzhen) Co., Ltd.</span><span class="cv-date">Shenzhen, China</span></div>
+              <ul>
+                <li>Processed apparent optical property (AOP) data in Python to derive remote sensing reflectance (R<sub>rs</sub>).</li>
+                <li>Drafted requirements and webpage prototypes for a platform sharing AOP data with researchers.</li>
+              </ul>
+            </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Additional Training</h2>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title">Training Program in Machine Learning and NLP</span><span class="cv-date">Apr 2024 – Jun 2024</span></div>
+              <div class="cv-row"><span class="cv-org">Columbia University (online program)</span></div>
+              <ul>
+                <li>Applied machine learning and NLP (sentiment analysis, topic modelling) in Python to user reviews for location-based services.</li>
+              </ul>
+            </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Honors &amp; Awards</h2>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title"><span style="font-weight:400"><em>Successful Participant</em>, Mathematical Contest in Modeling (MCM)</span></span><span class="cv-date">May 2024</span></div>
+            </div>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title"><span style="font-weight:400">Third-Class Scholarship, Xidian University</span></span><span class="cv-date">Oct 2023</span></div>
+            </div>
+            <div class="cv-entry">
+              <div class="cv-row"><span class="cv-title"><span style="font-weight:400">Provincial Third Prize, 14th “Zhengda Cup” National Market Research Competition</span></span><span class="cv-date">Apr 2023</span></div>
+            </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Skills</h2>
+        <dl class="skills">
+          <dt>Programming</dt><dd>Python, R, MATLAB, Java, SQL (MySQL); intermediate C and LaTeX</dd>
+          <dt>Geospatial</dt><dd>ArcGIS, Google Earth Engine, GeoPandas</dd>
+          <dt>Statistics &amp; ML</dt><dd>Random forest, panel regression, causal mediation analysis, spatial autoregressive models, clustering, NLP; SPSS</dd>
+          <dt>Languages</dt><dd>Chinese (native), English (fluent), German (intermediate)</dd>
+          <dt>Tests</dt><dd>IELTS 7.0 (Reading 8.0, Listening 7.5, Writing 6.5, Speaking 6.0), Jun 2024</dd>
+        </dl>
+      </section>
+
+      <div id="download" class="cv-download">
+        <p>Want a copy? The PDF version has the same content in a two-page format.</p>
+        <a class="btn btn-primary" href="assets/CV.pdf" download="Huizhen_Sun_CV.pdf">Download CV (PDF)</a>
+      </div>
+    </div>
+  </dialog>
+
   <script>
     // Highlight the nav item for the section in view
     (function () {
@@ -342,6 +539,27 @@
       }, { rootMargin: '-40% 0px -55% 0px' });
       sections.forEach(function (s) { obs.observe(s); });
       document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+  <script>
+    // CV pop-up
+    (function () {
+      var dlg = document.getElementById('cv-dialog');
+      if (!dlg || typeof dlg.showModal !== 'function') return; // old browsers: link opens the PDF
+      var root = document.documentElement;
+      document.querySelectorAll('[data-open-cv]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          dlg.showModal();
+          root.classList.add('modal-open');
+          dlg.querySelector('.cv-body').scrollTop = 0;
+        });
+      });
+      dlg.querySelectorAll('[data-close-cv]').forEach(function (el) {
+        el.addEventListener('click', function () { dlg.close(); });
+      });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener('close', function () { root.classList.remove('modal-open'); });
     })();
   </script>
 </body>
