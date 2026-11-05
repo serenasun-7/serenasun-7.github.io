@@ -71,14 +71,25 @@
 
     /* ---------- Intro ---------- */
     .intro {
-      display: flex; flex-wrap: wrap; gap: 56px; align-items: center;
+      display: flex; flex-wrap: wrap; gap: 48px; align-items: center;
       padding-top: 88px; padding-bottom: 72px;
     }
     .headshot {
       flex: 0 0 240px; height: 280px; border-radius: 8px; object-fit: cover;
       background: var(--placeholder);
     }
-    .intro-text { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+    .intro-text { flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+    .interests { flex: 0 1 250px; min-width: 220px; border-top: 2px solid var(--ink); padding-top: 16px; }
+    .interests h2 {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--subtle); margin-bottom: 14px;
+    }
+    .interests ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+    .interests li { font-size: 16px; font-weight: 600; line-height: 1.4; padding-left: 18px; position: relative; }
+    .interests li::before {
+      content: ""; position: absolute; left: 0; top: 0.5em; width: 7px; height: 7px;
+      border-radius: 50%; background: var(--accent);
+    }
     .intro h1 { font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em; }
     .lead { font-size: 19px; line-height: 1.6; color: var(--text); }
     .intro-sub { font-size: 16px; line-height: 1.7; color: var(--muted); }
@@ -98,11 +109,6 @@
     .section-note { font-size: 15px; color: var(--subtle); margin: -24px 0 32px; }
     .eyebrow { font-size: 13px; font-weight: 600; color: var(--accent); }
 
-    /* ---------- Research ---------- */
-    .themes { display: flex; flex-wrap: wrap; gap: 40px; }
-    .theme { flex: 1 1 260px; }
-    .theme h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
-    .theme p { font-size: 15px; line-height: 1.7; color: var(--muted); }
 
     /* ---------- Publications ---------- */
     .pubs { display: flex; flex-direction: column; gap: 28px; }
@@ -184,7 +190,6 @@
       <div class="nav-links">
         <a href="#home" class="active">Home</a>
         <a href="#publications">Publications</a>
-        <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
@@ -198,12 +203,20 @@
       <img class="headshot" src="assets/headshot.JPG" alt="headshot">
       <div class="intro-text">
         <h1>Huizhen(Serena) Sun</h1>
-        <p class="lead">I use satellite data, machine learning and geospatial data science to study how climate change affects water: from floods and sea level rise to water quality in lakes and coasts.</p>
+        <p class="lead">I study how climate change is reshaping coastal and inland waters, using satellite remote sensing and spatial data science. My work ranges from retrieving water quality from ocean color to mapping floods and coastal land change, with the aim of informing coastal adaptation.</p>
         <div class="actions">
           <a class="btn btn-primary" href="assets/CV.pdf" target="_blank" rel="noopener">Download CV</a>
           <a class="btn btn-secondary" href="mailto:jnsun030@gmail.com">Email me</a>
         </div>
       </div>
+      <aside class="interests" aria-labelledby="interests-title">
+        <h2 id="interests-title">Research interests</h2>
+        <ul>
+          <li>Spatial Data Science</li>
+          <li>Ocean Color Remote Sensing</li>
+          <li>Coastal Resilience and Climate Adaptation</li>
+        </ul>
+      </aside>
     </section>
 
     <!-- Publications -->
@@ -224,27 +237,6 @@
           <div>
             <p class="pub-title">Decadal regime shifts and drivers in Xijiang River water quality.</p>
             <p class="pub-meta"><strong>Sun, H.</strong>, Zhao, D., Zhang, H., &amp; Sun, Z. (in preparation).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research" class="band">
-      <div class="container">
-        <h2>Research interests</h2>
-        <div class="themes">
-          <div class="theme">
-            <h3>Climate extremes and exposure</h3>
-            <p>Mapping floods from satellite radar, which sees through the clouds that cover optical imagery during storms, and linking flood extent to population data to understand who is affected and for how long.</p>
-          </div>
-          <div class="theme">
-            <h3>Water quality from space</h3>
-            <p>Retrieving chlorophyll-a and nutrients from field and satellite reflectance, and combining several satellites into one consistent record to track eutrophication in lakes, including small lakes that single sensors miss.</p>
-          </div>
-          <div class="theme">
-            <h3>Coasts under sea level rise</h3>
-            <p>Studying how reclamation and nearshore form are changing coastlines, and how those changes shape the effect of rising seas on coastal water quality.</p>
           </div>
         </div>
       </div>
