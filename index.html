@@ -393,7 +393,7 @@
         <a href="https://orcid.org/0009-0005-9936-5863" target="_blank" rel="noopener">ORCID: 0009-0005-9936-5863</a>
       </div>
     </div>
-    <p class="container copyright">© <span id="year">2026</span> Serena</p>
+    <p class="container copyright">© <span id="year">2026</span> Serena · Last updated: <span id="last-updated">17 November 2026</span> (Beijing Time)</p>
   </footer>
 
   <dialog id="cv-dialog" class="cv-dialog" aria-labelledby="cv-dialog-title">
@@ -571,6 +571,16 @@
       });
       dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
       dlg.addEventListener('close', function () { root.classList.remove('modal-open'); });
+    })();
+  </script>
+  <script>
+    // Show the date this page was last published, in Beijing Time.
+    (function () {
+      var d = new Date(document.lastModified);
+      if (isNaN(d) || Date.now() - d < 60000) return; // no reliable date: keep the fallback
+      document.getElementById('last-updated').textContent = d.toLocaleDateString('en-GB', {
+        timeZone: 'Asia/Shanghai', day: 'numeric', month: 'long', year: 'numeric'
+      });
     })();
   </script>
 </body>
